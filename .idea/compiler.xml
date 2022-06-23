@@ -9,9 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="custom-annotation-demo2" />
         <module name="custom-annotation-demo1" />
-        <module name="mytest" />
         <module name="custom-annotation-demo3" />
         <module name="custom-annotation-web" />
+        <module name="new-module" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +22,8 @@
       <module name="custom-annotation-demo3" target="1.8" />
       <module name="custom-annotation-web" target="1.8" />
       <module name="mytest" target="11" />
+      <module name="new-module" target="11" />
+      <module name="newmodule" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -31,6 +33,8 @@
       <module name="custom-annotation-demo3" options="-parameters" />
       <module name="custom-annotation-web" options="-parameters" />
       <module name="mytest" options="-parameters" />
+      <module name="new-module" options="-parameters" />
+      <module name="newmodule" options="-parameters" />
     </option>
   </component>
 </project>

@@ -1,0 +1,55 @@
+server:
+  context-path: /
+  port: 6154
+
+
+spring:
+  datasource:
+    # com.alibaba.druid.pool.DruidDataSource
+    type:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      name: ius
+      url:
+      username:
+      password:
+      initial-size: 1
+      min-idle: 1
+      max-active: 5
+      max-wait: 10000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 1800000
+      validation-query: "SELECT 'x'"
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: -1
+
+  redis:
+    host: localhost
+    port: 6379
+
+
+logging:
+# only effective if logback-spring.xml not exists
+  file: target/logs/activity/pumpkin-activity-api.log
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    root: WARN
+    org.springframework: WARN
+    org.springframework.core: WARN
+    org.springframework.test: WARN
+    org.springframework.test.context: WARN
+    org.springframework.test.context.junit4: WARN
+    org.springframework.boot: WARN
+    org.springframework.boot.test: WARN
+    org.springframework.boot.test.context: WARN
+    org.apache.tomcat: INFO
+    org.apache.catalina: INFO
+    org.eclipse.jetty: INFO
+    org.apache.ibatis: WARN
+    springfox: WARN
+    org.apache.http: WARN
