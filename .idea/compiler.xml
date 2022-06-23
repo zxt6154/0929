@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="custom-annotation-demo2" />
+        <module name="custom-annotation-demo1" />
+        <module name="mytest" />
+        <module name="custom-annotation-demo3" />
+        <module name="custom-annotation-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="0929" target="1.8" />
+      <module name="custom-annotation" target="1.8" />
+      <module name="custom-annotation-demo1" target="1.8" />
+      <module name="custom-annotation-demo2" target="1.8" />
+      <module name="custom-annotation-demo3" target="1.8" />
+      <module name="custom-annotation-web" target="1.8" />
+      <module name="mytest" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="custom-annotation-demo1" options="-parameters" />
+      <module name="custom-annotation-demo2" options="-parameters" />
+      <module name="custom-annotation-demo3" options="-parameters" />
+      <module name="custom-annotation-web" options="-parameters" />
+      <module name="mytest" options="-parameters" />
+    </option>
+  </component>
+</project>

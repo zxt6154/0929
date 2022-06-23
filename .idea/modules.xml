@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/0929.iml" filepath="$PROJECT_DIR$/.idea/0929.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custom-annotation-demo1/custom-annotation-demo1.iml" filepath="$PROJECT_DIR$/custom-annotation-demo1/custom-annotation-demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custom-annotation-demo2/custom-annotation-demo2.iml" filepath="$PROJECT_DIR$/custom-annotation-demo2/custom-annotation-demo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custom-annotation-demo3/custom-annotation-demo3.iml" filepath="$PROJECT_DIR$/custom-annotation-demo3/custom-annotation-demo3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custom-annotation-web/custom-annotation-web.iml" filepath="$PROJECT_DIR$/custom-annotation-web/custom-annotation-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mytest/mytest.iml" filepath="$PROJECT_DIR$/mytest/mytest.iml" />
+    </modules>
+  </component>
+</project>
