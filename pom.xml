@@ -9,6 +9,7 @@
 		<module>custom-annotation-demo2</module>
 		<module>custom-annotation-demo3</module>
 		<module>custom-annotation-web</module>
+<!--		<module>new-module</module>-->
 	</modules>
 
 	<parent>
