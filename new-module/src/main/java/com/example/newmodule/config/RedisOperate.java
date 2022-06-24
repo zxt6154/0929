@@ -1,4 +1,4 @@
-package com.example.newmodule.utils;
+package com.example.newmodule.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import java.util.Set;
 
 @Component
 @Slf4j
-public class RedisUtil {
+public class RedisOperate {
 
     @Autowired
     private JedisPool jedisPool;

@@ -1,30 +1,73 @@
 package com.example.newmodule;
 
 
-import com.example.newmodule.config.JedisConfig;
-import com.example.newmodule.utils.RedisUtil;
+import com.example.newmodule.config.RedisOperate;
+import com.example.newmodule.services.ServiceTest;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.test.context.junit4.SpringRunner;
-import redis.clients.jedis.Jedis;
-
-import java.util.List;
-import java.util.Set;
 
 @SpringBootTest
 public class RedisTest {
 
     @Autowired
-  private RedisUtil redisUtil;
+    private RedisOperate redisOperate;
 
+     @Autowired
+     private ServiceTest serviceTest;
 
-    public void testJedis() {
-        redisUtil.set("ceshi", "ceshi");
+    @Test
+    public void testDistributeLock() {
+        serviceTest.testDistributeLock();
     }
 
 
 
+    public void testJedis() {
+        redisOperate.set("ceshi", "ceshi");
+    }
+
+    @Test
+    public void test2() {
+        //            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    System.out.println("test1 -> " + Thread.currentThread().getName());
+//                    taskTransComponent.updateTaskStateAndInfo(333, 1, 1);
+//                }
+//            }).start();
+//
+//
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("test2 -> " + Thread.currentThread().getName());
+//                taskTransComponent.updateTaskStateAndInfo(333, 1, 1);
+//            }
+//        }).start();
+//
+//        try {
+//            TimeUnit.SECONDS.sleep(8);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+//        ExecutorService executorService = Executors.newFixedThreadPool(10);
+//        for (int i = 0; i < 3; i++) {
+//
+//            executorService.submit(new Runnable() {
+//                @Override
+//                public void run() {
+//                    System.out.println("测试 -> ");
+//                    taskTransComponent.updateTaskStateAndInfo(999, 1, 1);
+//                }
+//            });
+//        }
+//
+//        try {
+//            TimeUnit.SECONDS.sleep(10);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+    }
 }

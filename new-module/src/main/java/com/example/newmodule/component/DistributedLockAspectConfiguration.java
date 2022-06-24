@@ -21,10 +21,10 @@ import java.lang.reflect.Method;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-//@Aspect
-//@Configuration
-//@ConditionalOnClass(IDistributedLock.class)
-//@AutoConfigureAfter(DistributedLockAutoConfiguration.class)
+@Aspect
+@Configuration
+@ConditionalOnClass(IDistributedLock.class)
+@AutoConfigureAfter(DistributedLockAutoConfiguration.class)
 public class DistributedLockAspectConfiguration {
 
     private static final Logger logger = LoggerFactory.getLogger(DistributedLockAspectConfiguration.class);
@@ -39,7 +39,7 @@ public class DistributedLockAspectConfiguration {
     /**
      * 定义切入点
      */
-    //@Pointcut("@annotation(com.example.newmodule.component.DistributeLock)")
+    @Pointcut("@annotation(com.example.newmodule.component.DistributeLock)")
     private void lockPoint() {
     }
 
@@ -50,8 +50,9 @@ public class DistributedLockAspectConfiguration {
      * @return  方法返回结果
      * @throws Throwable throwable
      */
-    //@Around("lockPoint()")
+    @Around("lockPoint()")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println("com.example.newmodule.component.DistributeLock");
         Method method = ((MethodSignature) pjp.getSignature()).getMethod();
         DistributeLock lockAction = method.getAnnotation(DistributeLock.class);
         String logKey = getLogKey(lockAction, pjp, method);
@@ -85,10 +86,10 @@ public class DistributedLockAspectConfiguration {
      * @return String
      */
     private String getLogKey(DistributeLock lockAction, ProceedingJoinPoint pjp, Method method) {
-        String name = lockAction.name();
+        String key = lockAction.key();
         String value = lockAction.value();
         Object[] args = pjp.getArgs();
-        return parse(name, method, args) + "_" + parse(value, method, args);
+        return parse(key, method, args) + "_" + parse(value, method, args);
     }
 
     /**

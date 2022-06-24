@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 
 
-//@Configuration
-//@AutoConfigureAfter(RedisAutoConfiguration.class)
+@Configuration
+@AutoConfigureAfter(RedisAutoConfiguration.class)
 public class DistributedLockAutoConfiguration {
 
-//    @Bean
-//    @ConditionalOnBean(RedisTemplate.class)
+    @Bean
+    @ConditionalOnBean(RedisTemplate.class)
     public IDistributedLock redisDistributedLock(RedisTemplate<Object, Object> redisTemplate){
         return new RedisDistributedLock(redisTemplate);
     }

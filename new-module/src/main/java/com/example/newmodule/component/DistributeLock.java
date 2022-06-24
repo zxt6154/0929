@@ -8,23 +8,21 @@ import java.lang.annotation.*;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
-@Documented
-@Component
 public @interface DistributeLock {
 
     /**
      * 锁的资源，key。
      *  支持spring El表达式
      */
-    @AliasFor("name")
-    String name() default "'default'";
+//    @AliasFor("key")
+    String key() default "abc";
 
     /**
      * 锁的资源，value。
      *  支持spring El表达式
      */
-    @AliasFor("value")
-    String value() default "'default'";
+//    @AliasFor("value")
+    String value() default "cba";
 
     /**
      * 持锁时间,单位毫秒
@@ -34,7 +32,7 @@ public @interface DistributeLock {
     /**
      * 当获取失败时候动作
      */
-    LockFailAction action() default LockFailAction.CONTINUE;
+    LockFailAction action() default LockFailAction.GIVEUP;
 
     public enum LockFailAction{
         /** 放弃 */
@@ -51,6 +49,6 @@ public @interface DistributeLock {
     /**
      * 重试次数
      */
-    int retryTimes() default 5;
+    int retryTimes() default 1;
 
 }

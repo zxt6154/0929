@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static org.slf4j.LoggerFactory.getLogger;
-
+@Component
 public class RedisDistributedLock extends AbstractDistributedLockImpl {
 
     private static final Logger logger = LoggerFactory.getLogger(RedisDistributedLock.class);
