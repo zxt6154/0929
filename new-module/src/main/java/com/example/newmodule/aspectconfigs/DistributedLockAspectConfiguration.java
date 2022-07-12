@@ -1,5 +1,7 @@
-package com.example.newmodule.component;
+package com.example.newmodule.aspectconfigs;
 
+import com.example.newmodule.annotaions.DistributeLock;
+import com.example.newmodule.distributelock.IDistributedLock;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -39,7 +41,7 @@ public class DistributedLockAspectConfiguration {
     /**
      * 定义切入点
      */
-    @Pointcut("@annotation(com.example.newmodule.component.DistributeLock)")
+    @Pointcut("@annotation(com.example.newmodule.annotaions.DistributeLock)")
     private void lockPoint() {
     }
 
@@ -52,7 +54,7 @@ public class DistributedLockAspectConfiguration {
      */
     @Around("lockPoint()")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
-        System.out.println("com.example.newmodule.component.DistributeLock");
+        System.out.println("com.example.newmodule.annotaions.DistributeLock");
         Method method = ((MethodSignature) pjp.getSignature()).getMethod();
         DistributeLock lockAction = method.getAnnotation(DistributeLock.class);
         String logKey = getLogKey(lockAction, pjp, method);

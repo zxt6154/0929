@@ -1,4 +1,4 @@
-package com.example.newmodule.component;
+package com.example.newmodule.distributelock;
 
 public interface IDistributedLock {
     public static final long TIMEOUT_MILLIS = 5000;

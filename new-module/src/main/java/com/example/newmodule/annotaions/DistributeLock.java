@@ -1,4 +1,4 @@
-package com.example.newmodule.component;
+package com.example.newmodule.annotaions;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Component;

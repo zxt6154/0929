@@ -1,16 +1,9 @@
 package com.example.newmodule.services;
 
-import com.example.newmodule.component.DistributeLock;
 import com.example.newmodule.config.RedisOperate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.task.TaskExecutor;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class ServiceTest {
@@ -20,6 +13,8 @@ public class ServiceTest {
 
     @Autowired
     RedisOperate redisOperate;
+
+    Integer num = 0;
 
     public void testDistributeLock() {
         testDistributeLock1();

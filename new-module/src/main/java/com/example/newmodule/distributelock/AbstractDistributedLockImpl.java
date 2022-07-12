@@ -1,4 +1,6 @@
-package com.example.newmodule.component;
+package com.example.newmodule.distributelock;
+
+import com.example.newmodule.distributelock.IDistributedLock;
 
 public abstract class AbstractDistributedLockImpl implements IDistributedLock {
 

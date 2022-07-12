@@ -1,5 +1,7 @@
-package com.example.newmodule.component;
+package com.example.newmodule.aspectconfigs;
 
+import com.example.newmodule.components.RedisDistributedLock;
+import com.example.newmodule.distributelock.IDistributedLock;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
