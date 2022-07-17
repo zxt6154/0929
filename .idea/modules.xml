@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/custom-annotation-demo2/custom-annotation-demo2.iml" filepath="$PROJECT_DIR$/custom-annotation-demo2/custom-annotation-demo2.iml" />
       <module fileurl="file://$PROJECT_DIR$/custom-annotation-demo3/custom-annotation-demo3.iml" filepath="$PROJECT_DIR$/custom-annotation-demo3/custom-annotation-demo3.iml" />
       <module fileurl="file://$PROJECT_DIR$/custom-annotation-web/custom-annotation-web.iml" filepath="$PROJECT_DIR$/custom-annotation-web/custom-annotation-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data_handle/data_handle.iml" filepath="$PROJECT_DIR$/data_handle/data_handle.iml" />
       <module fileurl="file://$PROJECT_DIR$/new-module/new-module.iml" filepath="$PROJECT_DIR$/new-module/new-module.iml" />
     </modules>
   </component>

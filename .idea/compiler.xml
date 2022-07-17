@@ -10,6 +10,7 @@
         <module name="custom-annotation-demo2" />
         <module name="custom-annotation-demo1" />
         <module name="custom-annotation-demo3" />
+        <module name="data_handle" />
         <module name="custom-annotation-web" />
         <module name="new-module" />
       </profile>
@@ -21,6 +22,7 @@
       <module name="custom-annotation-demo2" target="1.8" />
       <module name="custom-annotation-demo3" target="1.8" />
       <module name="custom-annotation-web" target="1.8" />
+      <module name="data_handle" target="11" />
       <module name="mytest" target="11" />
       <module name="new-module" target="1.8" />
       <module name="newmodule" target="11" />
@@ -32,6 +34,7 @@
       <module name="custom-annotation-demo2" options="-parameters" />
       <module name="custom-annotation-demo3" options="-parameters" />
       <module name="custom-annotation-web" options="-parameters" />
+      <module name="data_handle" options="-parameters" />
       <module name="mytest" options="-parameters" />
       <module name="new-module" options="-parameters" />
       <module name="newmodule" options="-parameters" />

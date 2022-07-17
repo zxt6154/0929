@@ -5,23 +5,26 @@ import org.springframework.stereotype.Component;
 
 import java.lang.annotation.*;
 
+/**
+ * @author alice
+ */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 public @interface DistributeLock {
 
-    /**
+     /**
      * 锁的资源，key。
      *  支持spring El表达式
      */
-//    @AliasFor("key")
+    @AliasFor("key")
     String key() default "abc";
 
-    /**
-     * 锁的资源，value。
+     /**
+     *  锁的资源，value。
      *  支持spring El表达式
      */
-//    @AliasFor("value")
+    @AliasFor("value")
     String value() default "cba";
 
     /**

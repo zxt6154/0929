@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static org.slf4j.LoggerFactory.getLogger;
+
 @Component
 public class RedisDistributedLock extends AbstractDistributedLockImpl {
 
@@ -45,7 +46,7 @@ public class RedisDistributedLock extends AbstractDistributedLockImpl {
     public boolean lock(String key, long expire, int retryTimes, long sleepMillis) {
         boolean result = setRedis(key, expire);
         // 如果获取锁失败，按照传入的重试次数进行重试
-        while((!result) && retryTimes-- > 0){
+        while ((!result) && retryTimes-- > 0) {
             try {
                 logger.debug("lock failed, retrying..." + retryTimes);
                 Thread.sleep(sleepMillis);
@@ -72,11 +73,11 @@ public class RedisDistributedLock extends AbstractDistributedLockImpl {
             Long result = redisTemplate.execute((RedisCallback<Long>) redisConnection -> {
                 Object nativeConnection = redisConnection.getNativeConnection();
                 // 集群模式和单机模式虽然执行脚本的方法一样，但是没有共同的接口，所以只能分开执行
+
                 // 集群模式
                 if (nativeConnection instanceof JedisCluster) {
                     return (Long) ((JedisCluster) nativeConnection).eval(UNLOCK_LUA, keys, args);
                 }
-
                 // 单机模式
                 else if (nativeConnection instanceof Jedis) {
                     return (Long) ((Jedis) nativeConnection).eval(UNLOCK_LUA, keys, args);
