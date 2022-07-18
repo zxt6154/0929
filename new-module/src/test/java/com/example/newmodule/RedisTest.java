@@ -2,7 +2,6 @@ package com.example.newmodule;
 
 
 import com.example.newmodule.config.RedisOperate;
-import com.example.newmodule.services.ServiceTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,12 +12,12 @@ public class RedisTest {
     @Autowired
     private RedisOperate redisOperate;
 
-     @Autowired
-     private ServiceTest serviceTest;
+//     @Autowired
+//     private ServiceTest serviceTest;
 
     @Test
     public void testDistributeLock() {
-        serviceTest.testDistributeLock();
+        //serviceTest.testDistributeLock();
     }
 
 

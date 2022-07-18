@@ -4,27 +4,27 @@ server:
 
 
 spring:
-  datasource:
-    # com.alibaba.druid.pool.DruidDataSource  com.mysql.cj.jdbc.Driver
-    type:
-    driver-class-name:
-    druid:
-      name: ius
-      url:
-      username:
-      password:
-      initial-size: 1
-      min-idle: 1
-      max-active: 5
-      max-wait: 10000
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 1800000
-      validation-query: "SELECT 'x'"
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      pool-prepared-statements: false
-      max-pool-prepared-statement-per-connection-size: -1
+#  datasource:
+#    # com.alibaba.druid.pool.DruidDataSource  com.mysql.cj.jdbc.Driver
+#    type:
+#    driver-class-name:
+#    druid:
+#      name: ius
+#      url:
+#      username:
+#      password:
+#      initial-size: 1
+#      min-idle: 1
+#      max-active: 5
+#      max-wait: 10000
+#      time-between-eviction-runs-millis: 60000
+#      min-evictable-idle-time-millis: 1800000
+#      validation-query: "SELECT 'x'"
+#      test-while-idle: true
+#      test-on-borrow: false
+#      test-on-return: false
+#      pool-prepared-statements: false
+#      max-pool-prepared-statement-per-connection-size: -1
 
   redis:
     ## Redis数据库索引（默认为0）
