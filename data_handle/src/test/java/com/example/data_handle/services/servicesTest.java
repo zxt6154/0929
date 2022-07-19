@@ -10,7 +10,7 @@ import java.io.File;
 class servicesTest {
 
     @Autowired
-    ExcelServiceImpl services;
+    ExcelServiceImpl excelServiceImpl;
 
     @Test
     public void test1(){
