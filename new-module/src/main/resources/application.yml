@@ -4,27 +4,27 @@ server:
 
 
 spring:
-#  datasource:
-#    com.alibaba.druid.pool.DruidDataSource  com.mysql.cj.jdbc.Driver
-#    type:
-#    driver-class-name:
-#    druid:
-#      name: ius
-#      url:
-#      username:
-#      password:
-#      initial-size: 1
-#      min-idle: 1
-#      max-active: 5
-#      max-wait: 10000
-#      time-between-eviction-runs-millis: 60000
-#      min-evictable-idle-time-millis: 1800000
-#      validation-query: "SELECT 'x'"
-#      test-while-idle: true
-#      test-on-borrow: false
-#      test-on-return: false
-#      pool-prepared-statements: false
-#      max-pool-prepared-statement-per-connection-size: -1
+  datasource:
+    # com.alibaba.druid.pool.DruidDataSource  com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      name: ius
+      url: jdbc:mysql://dev.database.guoing.com:3306/pumpkin_ius?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+      username: pumpkin_all_dev
+      password: vaK4NaTgrzT4AWhS
+      initial-size: 1
+      min-idle: 1
+      max-active: 5
+      max-wait: 10000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 1800000
+      validation-query: "SELECT 'x'"
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      max-pool-prepared-statement-per-connection-size: -1
+      pool-prepared-statements: false
 
   redis:
     ## Redis数据库索引（默认为0）

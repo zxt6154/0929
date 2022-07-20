@@ -7,21 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="custom-annotation-demo2" />
-        <module name="custom-annotation-demo1" />
-        <module name="custom-annotation-demo3" />
         <module name="data_handle" />
-        <module name="custom-annotation-web" />
         <module name="new-module" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="0929" target="1.8" />
       <module name="custom-annotation" target="1.8" />
-      <module name="custom-annotation-demo1" target="1.8" />
-      <module name="custom-annotation-demo2" target="1.8" />
-      <module name="custom-annotation-demo3" target="1.8" />
-      <module name="custom-annotation-web" target="1.8" />
+      <module name="custom-annotation-demo1" target="1.5" />
+      <module name="custom-annotation-demo2" target="1.5" />
+      <module name="custom-annotation-demo3" target="1.5" />
+      <module name="custom-annotation-web" target="1.5" />
       <module name="data_handle" target="11" />
       <module name="mytest" target="11" />
       <module name="new-module" target="1.8" />

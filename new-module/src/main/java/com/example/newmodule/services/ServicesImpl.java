@@ -20,4 +20,9 @@ public class ServicesImpl {
         EasyExcel.read(new File("/Users/alice/Documents/wokesheet.xlsx"), UserInfo.class, excelImportListener).sheet().doRead();
         //EasyExcel.write(new File("/Users/alice/Documents/wtest2.xlsx"), UserInfo.class).sheet("ceshi").doWrite(excelImportListener.lists);
     }
+
+    public void testRedisDistributeLock() {
+        EasyExcel.read(new File("/Users/alice/Documents/wokesheet.xlsx"), UserInfo.class, excelImportListener).sheet().doRead();
+        //EasyExcel.write(new File("/Users/alice/Documents/wtest2.xlsx"), UserInfo.class).sheet("ceshi").doWrite(excelImportListener.lists);
+    }
 }
