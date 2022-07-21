@@ -12,7 +12,6 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisCommands;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -98,10 +97,10 @@ public class RedisDistributedLock extends AbstractDistributedLockImpl {
     private boolean setRedis(String key, long expire) {
         try {
             String result = redisTemplate.execute((RedisCallback<String>) redisConnection -> {
-                JedisCommands commands = (JedisCommands) redisConnection.getNativeConnection();
+                Jedis commands = (Jedis) redisConnection.getNativeConnection();
+                //Jedis jedis = (Jedis) redisConnection.getNativeConnection();
                 String uuid = UUID.randomUUID().toString();
                 lockFlag.set(uuid);
-
                 return commands.set(key, uuid, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expire);
             });
             return !StringUtils.isEmpty(result);

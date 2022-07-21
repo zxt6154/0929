@@ -17,14 +17,14 @@ public @interface DistributeLock {
      * 锁的资源，key。
      *  支持spring El表达式
      */
-    @AliasFor("key")
+    //@AliasFor("key")
     String key() default "abc";
 
      /**
      *  锁的资源，value。
      *  支持spring El表达式
      */
-    @AliasFor("value")
+    //@AliasFor("value")
     String value() default "cba";
 
     /**

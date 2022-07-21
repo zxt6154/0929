@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.newmodule.mapper.SkuMapper">
-  <resultMap id="BaseResultMap" type="com.example.newmodule.entity.Sku">
+<mapper namespace="com.example.newmodule.repository.mapper.SkuMapper">
+  <resultMap id="BaseResultMap" type="com.example.newmodule.repository.entity.Sku">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="sku" jdbcType="VARCHAR" property="sku" />
     <result column="sub_sku" jdbcType="VARCHAR" property="subSku" />
-    <result column="describe" jdbcType="VARCHAR" property="describe" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
     <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
     <result column="goods_num" jdbcType="INTEGER" property="goodsNum" />
     <result column="price" jdbcType="DECIMAL" property="price" />
@@ -69,9 +69,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, sku, sub_sku, describe, goods_name, goods_num, price
+    id, sku, sub_sku, note, goods_name, goods_num, price
   </sql>
-  <select id="selectByExample" parameterType="com.example.newmodule.entity.SkuExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.newmodule.repository.entity.SkuExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -96,24 +96,24 @@
     delete from sku
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.newmodule.entity.SkuExample">
+  <delete id="deleteByExample" parameterType="com.example.newmodule.repository.entity.SkuExample">
     delete from sku
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.newmodule.entity.Sku">
+  <insert id="insert" parameterType="com.example.newmodule.repository.entity.Sku">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into sku (sku, sub_sku, describe, 
+    insert into sku (sku, sub_sku, note,
       goods_name, goods_num, price
       )
-    values (#{sku,jdbcType=VARCHAR}, #{subSku,jdbcType=VARCHAR}, #{describe,jdbcType=VARCHAR}, 
+    values (#{sku,jdbcType=VARCHAR}, #{subSku,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR},
       #{goodsName,jdbcType=VARCHAR}, #{goodsNum,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.example.newmodule.entity.Sku">
+  <insert id="insertSelective" parameterType="com.example.newmodule.repository.entity.Sku">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -125,8 +125,8 @@
       <if test="subSku != null">
         sub_sku,
       </if>
-      <if test="describe != null">
-        describe,
+      <if test="note != null">
+        note,
       </if>
       <if test="goodsName != null">
         goods_name,
@@ -145,8 +145,8 @@
       <if test="subSku != null">
         #{subSku,jdbcType=VARCHAR},
       </if>
-      <if test="describe != null">
-        #{describe,jdbcType=VARCHAR},
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
       </if>
       <if test="goodsName != null">
         #{goodsName,jdbcType=VARCHAR},
@@ -159,7 +159,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.newmodule.entity.SkuExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.newmodule.repository.entity.SkuExample" resultType="java.lang.Long">
     select count(*) from sku
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -177,8 +177,8 @@
       <if test="record.subSku != null">
         sub_sku = #{record.subSku,jdbcType=VARCHAR},
       </if>
-      <if test="record.describe != null">
-        describe = #{record.describe,jdbcType=VARCHAR},
+      <if test="record.note != null">
+        note = #{record.note,jdbcType=VARCHAR},
       </if>
       <if test="record.goodsName != null">
         goods_name = #{record.goodsName,jdbcType=VARCHAR},
@@ -199,7 +199,7 @@
     set id = #{record.id,jdbcType=INTEGER},
       sku = #{record.sku,jdbcType=VARCHAR},
       sub_sku = #{record.subSku,jdbcType=VARCHAR},
-      describe = #{record.describe,jdbcType=VARCHAR},
+      note = #{record.note,jdbcType=VARCHAR},
       goods_name = #{record.goodsName,jdbcType=VARCHAR},
       goods_num = #{record.goodsNum,jdbcType=INTEGER},
       price = #{record.price,jdbcType=DECIMAL}
@@ -207,7 +207,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.newmodule.entity.Sku">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.newmodule.repository.entity.Sku">
     update sku
     <set>
       <if test="sku != null">
@@ -216,8 +216,8 @@
       <if test="subSku != null">
         sub_sku = #{subSku,jdbcType=VARCHAR},
       </if>
-      <if test="describe != null">
-        describe = #{describe,jdbcType=VARCHAR},
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
       </if>
       <if test="goodsName != null">
         goods_name = #{goodsName,jdbcType=VARCHAR},
@@ -231,13 +231,13 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.newmodule.entity.Sku">
+  <update id="updateByPrimaryKey" parameterType="com.example.newmodule.repository.entity.Sku">
     update sku
     set sku = #{sku,jdbcType=VARCHAR},
       sub_sku = #{subSku,jdbcType=VARCHAR},
-      describe = #{describe,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR},
       goods_name = #{goodsName,jdbcType=VARCHAR},
-      goods_num = #{goodsNum,jdbcType=INTEGER},
+      goods_num = goods_num - 1,
       price = #{price,jdbcType=DECIMAL}
     where id = #{id,jdbcType=INTEGER}
   </update>
